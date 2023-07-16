@@ -5,7 +5,8 @@
   "main": "tabtastic.js",
   "scripts": {
     "start": "web-ext run --source-dir ./src/ --devtools",
-    "lint": "web-ext lint"
+    "lint": "web-ext lint --source-dir ./src/",
+    "build": "npm run lint && web-ext build --source-dir ./src/"
   },
   "keywords": [],
   "author": "",
