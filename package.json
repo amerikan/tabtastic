@@ -4,7 +4,8 @@
   "description": "**Tabtastic** is a free Firefox add-on that helps you wrangle your current open tabs.",
   "main": "tabtastic.js",
   "scripts": {
-    "start": "web-ext run --source-dir ./src/"
+    "start": "web-ext run --source-dir ./src/ --devtools",
+    "lint": "web-ext lint"
   },
   "keywords": [],
   "author": "",
