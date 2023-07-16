@@ -8,6 +8,25 @@ During research I tend to open several tabs, sometimes I end up with duplicate t
 
 ## 🏁 Road Map
 
+⚠️ UNDER ACTIVE DEVELOPMENT
+
 - [ ] sorts all open tab based on domain
 - [ ] eliminates duplicates
 - [ ] grouped by day
+- [ ] create icon
+
+## Development
+
+**Requires**: node, firefox
+
+Install dependencies:
+
+```sh
+npm i
+```
+
+Run extension in firefox:
+
+```sh
+npm start
+```

@@ -1,0 +1,20 @@
+{
+    "manifest_version": 2,
+    "name": "Tabtastic",
+    "version": "0.1.0",
+    "description": "Adds a browser button to help you sort tabs by domain and date, and close duplicate tabs.",
+    "homepage_url": "https://github.com/amerikan/tabtastic",
+    "icons": {
+      "48": "icons/beasts-48.png"
+    },
+    "permissions": [
+        "<all_urls>",
+        "tabs"
+    ],
+    "browser_action": {
+      "default_icon": "icons/beasts-32.png"
+    },
+    "background": {
+        "scripts": ["tabtastic.js"]
+    }
+  }

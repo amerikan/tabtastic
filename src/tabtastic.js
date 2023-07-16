@@ -1,0 +1,6 @@
+
+
+browser.browserAction.onClicked.addListener(() => {
+    //
+});
+
