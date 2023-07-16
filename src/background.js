@@ -15,9 +15,40 @@ async function removeDuplicateTabs() {
   await browser.tabs.remove(duplicateIds);
 }
 
+async function groupTabsByDomain() {
+  const tabs = await browser.tabs.query({});
+
+  const domainGroups = {};
+
+  tabs.forEach((tab) => {
+    const url = new URL(tab.url);
+    const domainKey = url.hostname;
+
+    if (domainGroups.hasOwnProperty(domainKey)) {
+      domainGroups[domainKey].push(tab);
+    } else {
+      domainGroups[domainKey] = [tab];
+    }
+  });
+
+  const newTabPositionIds = [];
+
+  for (const urls of Object.values(domainGroups)) {
+    urls.forEach((url) => {
+      newTabPositionIds.push(url.id);
+    });
+  }
+
+  await browser.tabs.move(newTabPositionIds, {
+    index: 0,
+  });
+}
+
 async function handleToolbarButtonClick() {
   try {
     await removeDuplicateTabs();
+
+    await groupTabsByDomain();
   } catch (e) {
     console.error(`Error: ${error}`);
   }
