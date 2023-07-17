@@ -1,12 +1,12 @@
 {
   "name": "tabtastic",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "**Tabtastic** is a free Firefox add-on that helps you wrangle your current open tabs.",
   "main": "tabtastic.js",
   "scripts": {
     "start": "web-ext run --source-dir ./src/ --devtools",
     "lint": "web-ext lint --source-dir ./src/",
-    "build": "npm run lint && web-ext build --source-dir ./src/"
+    "build": "npm run lint && web-ext build --source-dir ./src/ --overwrite-dest"
   },
   "keywords": [],
   "author": "",
