@@ -14,7 +14,7 @@ During research I tend to open several tabs, sometimes I end up with duplicate t
 - [x] sorts all open tab based on domain
 - [x] eliminates duplicates
 - [ ] grouped by day
-- [ ] port over as chrome extension
+- [ ] port over as chrome extension (see <https://github.com/amerikan/tabtastic/issues/1>)
 
 ## Development
 
