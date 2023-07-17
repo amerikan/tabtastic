@@ -18,13 +18,17 @@ During research I tend to open several tabs, sometimes I end up with duplicate t
 
 ## Development
 
-**Requires**: node, firefox
+**Requires**: node, firefox or chrome
+
+### Dependencies
 
 Install dependencies:
 
 ```sh
 npm i
 ```
+
+### Start up
 
 Run extension in firefox:
 
@@ -38,4 +42,11 @@ Run extension in chrome:
 npm run start:chrome
 ```
 
-Will install the add-on temporarily and will watch for changes made.
+The add-on/extension will install temporarily and will watch for changes made.
+
+
+### Debugging
+
+- monitor logs in terminal
+- in Firefox you can use console in dev tools
+- in Chrome see tips <https:/>/developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#logs>
