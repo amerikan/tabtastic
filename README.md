@@ -14,6 +14,7 @@ During research I tend to open several tabs, sometimes I end up with duplicate t
 - [x] sorts all open tab based on domain
 - [x] eliminates duplicates
 - [ ] grouped by day
+- [ ] port over as chrome extension
 
 ## Development
 
@@ -28,7 +29,13 @@ npm i
 Run extension in firefox:
 
 ```sh
-npm start
+npm run start:firefox
+```
+
+Run extension in chrome:
+
+```sh
+npm run start:chrome
 ```
 
 Will install the add-on temporarily and will watch for changes made.
