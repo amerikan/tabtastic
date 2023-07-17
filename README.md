@@ -10,10 +10,10 @@ During research I tend to open several tabs, sometimes I end up with duplicate t
 
 ⚠️ UNDER ACTIVE DEVELOPMENT
 
+- [x] create icon
 - [x] sorts all open tab based on domain
 - [x] eliminates duplicates
 - [ ] grouped by day
-- [ ] create icon
 
 ## Development
 
