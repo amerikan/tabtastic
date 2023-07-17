@@ -49,4 +49,4 @@ The add-on/extension will install temporarily and will watch for changes made.
 
 - monitor logs in terminal
 - in Firefox you can use console in dev tools
-- in Chrome see tips <https:/>/developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#logs>
+- in Chrome see tips <https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#logs>
