@@ -6,6 +6,11 @@
 
 During web research I tend to open several tabs, sometimes I end up with several duplicate tabs opened or tabs that are from the same domain scattered all over. The goal of this project is to help solve those problems via a Firefox add-on.
 
+## Give it a Try!
+
+- Firefox Add-on available at <https://addons.mozilla.org/en-US/firefox/addon/tabtastic/>
+- Chrome Web Store Extension **coming soon**
+
 ## 🏁 Road Map
 
 - [x] create temporary icon
