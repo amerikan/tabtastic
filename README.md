@@ -1,16 +1,14 @@
 # Tabtastic
 
-**Tabtastic** is a free Firefox add-on that helps you wrangle your current open tabs.
+**Tabtastic** is a free Firefox add-on (eventually will also be a Chrome extension) that helps you wrangle your current open tabs. Perfect for the tab hoarders.
 
 ## Purpose
 
-During research I tend to open several tabs, sometimes I end up with duplicate tabs opened or tabs that are from the same domain scattered all over. The goal of this project is to help solve those problems via a Firefox add-on.
+During web research I tend to open several tabs, sometimes I end up with several duplicate tabs opened or tabs that are from the same domain scattered all over. The goal of this project is to help solve those problems via a Firefox add-on.
 
 ## 🏁 Road Map
 
-⚠️ UNDER ACTIVE DEVELOPMENT
-
-- [x] create icon
+- [x] create temporary icon
 - [x] sorts all open tab based on domain
 - [x] eliminates duplicates
 - [ ] grouped by day
@@ -43,7 +41,6 @@ npm run start:chrome
 ```
 
 The add-on/extension will install temporarily and will watch for changes made.
-
 
 ### Debugging
 
