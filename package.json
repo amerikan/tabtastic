@@ -8,7 +8,8 @@
     "start:chrome": "web-ext run -t chromium --source-dir ./src/ --devtools",
     "start": "web-ext run -t firefox-desktop -t chromium --source-dir ./src/ --devtools",
     "lint": "web-ext lint --source-dir ./src/",
-    "build": "npm run lint && web-ext build --source-dir ./src/ --overwrite-dest"
+    "build:firefox": "npm run lint && web-ext build --source-dir ./src/ --overwrite-dest",
+    "build:chrome": "zip -vr web-ext-artifacts/tabtastic-chrome.zip src/ -x \"*.DS_Store\""
   },
   "keywords": [],
   "author": "",
