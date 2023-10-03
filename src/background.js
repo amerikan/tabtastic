@@ -20,16 +20,18 @@ async function groupTabsByDomain() {
 
   const domainGroups = {};
 
-  tabs.forEach((tab) => {
-    const url = new URL(tab.url);
-    const domainKey = url.hostname;
+  tabs
+    .filter((tab) => !tab.pinned)
+    .forEach((tab) => {
+      const url = new URL(tab.url);
+      const domainKey = url.hostname;
 
-    if (domainGroups.hasOwnProperty(domainKey)) {
-      domainGroups[domainKey].push(tab);
-    } else {
-      domainGroups[domainKey] = [tab];
-    }
-  });
+      if (domainGroups.hasOwnProperty(domainKey)) {
+        domainGroups[domainKey].push(tab);
+      } else {
+        domainGroups[domainKey] = [tab];
+      }
+    });
 
   const newTabPositionIds = [];
 
