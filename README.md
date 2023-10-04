@@ -1,6 +1,6 @@
 # Tabtastic
 
-**Tabtastic** is a free Firefox add-on and Chrome extension that helps you wrangle your current open tabs. Perfect for the tab hoarders.
+**Tabtastic** is a Firefox add-on and Chrome extension that helps you wrangle your current open tabs by ordering them by domain and URL, and closing any duplicates. Perfect for the tab hoarders.
 
 ## Purpose
 

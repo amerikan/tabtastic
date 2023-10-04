@@ -1,7 +1,7 @@
 {
   "name": "tabtastic",
   "version": "1.0.4",
-  "description": "**Tabtastic** is a Firefox add-on that helps you wrangle your current open tabs.",
+  "description": "**Tabtastic** is a Firefox add-on and Chrome extension that helps you wrangle your current open tabs by ordering them by domain and URL, and closing any duplicates. Perfect for the tab hoarders.",
   "main": "tabtastic.js",
   "scripts": {
     "start:firefox": "web-ext run --source-dir ./src/ --devtools",
