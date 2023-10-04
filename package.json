@@ -1,6 +1,6 @@
 {
   "name": "tabtastic",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "**Tabtastic** is a Firefox add-on that helps you wrangle your current open tabs.",
   "main": "tabtastic.js",
   "scripts": {
