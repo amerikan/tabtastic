@@ -13,10 +13,10 @@ During web research I tend to open several tabs, sometimes I end up with several
 
 ## 🏁 Road Map
 
-- [x] create temporary icon
+- [x] create icon (**must** be `png` since Chrome doesn't support `svg` see [#4](https://github.com/amerikan/tabtastic/issues/4))
 - [x] sorts all open tab based on domain
 - [x] eliminates duplicates
-- [x] **port over as chrome extension (see <https://github.com/amerikan/tabtastic/issues/1>)
+- [x] port over as Chrome extension (see current workaround [#1](https://github.com/amerikan/tabtastic/issues/1))
 
 ## Development
 
@@ -48,9 +48,9 @@ The add-on/extension will install temporarily and will watch for changes made.
 
 ### Debugging
 
-- monitor logs in the terminal
-- in Firefox you can use console in dev tools
-- in Chrome see tips <https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#logs>
+- monitor logs in the terminal where you ran start script
+- for in Firefox you can use console in dev tools
+- for Chrome see tips <https://developer.chrome.com/docs/extensions/mv3/getstarted/development-basics/#logs>, `console.log`'s don't seem to display, only `console.error`'s.
 
 #### Build Release
 
