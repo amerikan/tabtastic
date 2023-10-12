@@ -15,7 +15,7 @@ async function removeDuplicateTabs() {
   await browser.tabs.remove(duplicateIds);
 }
 
-async function groupTabsByDomain() {
+async function orderTabsByDomain() {
   const tabs = await browser.tabs.query({ currentWindow: true });
 
   const domainGroups = {};
@@ -50,7 +50,7 @@ async function handleToolbarButtonClick() {
   try {
     await removeDuplicateTabs();
 
-    await groupTabsByDomain();
+    await orderTabsByDomain();
   } catch (e) {
     console.error(`Error: ${error}`);
   }
