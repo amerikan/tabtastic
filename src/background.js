@@ -1,18 +1,17 @@
 async function removeDuplicateTabs() {
   const tabs = await browser.tabs.query({ currentWindow: true });
-
-  const duplicateIds = [];
-  const bins = {};
+  const duplicateTabIds = [];
+  const urls = {};
 
   tabs.forEach((tab) => {
-    if (bins.hasOwnProperty(tab.url)) {
-      duplicateIds.push(tab.id);
+    if (urls.hasOwnProperty(tab.url)) {
+      duplicateTabIds.push(tab.id);
     } else {
-      bins[tab.url] = true;
+      urls[tab.url] = true;
     }
   });
 
-  await browser.tabs.remove(duplicateIds);
+  await browser.tabs.remove(duplicateTabIds);
 }
 
 async function orderTabsByDomain() {
