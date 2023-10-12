@@ -1,7 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Tabtastic",
-    "version": "1.0.6",
+    "version": "1.1.0",
     "description": "Adds a browser button to order tabs by domain and URL, and closing any duplicate tabs.",
     "homepage_url": "https://github.com/amerikan/tabtastic",
     "icons": {
