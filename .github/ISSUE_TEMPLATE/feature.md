@@ -1,4 +1,6 @@
+---
 name: Feature Request
-description: Request a new feature
+about: Request a new feature
 title: "feat: "
-labels: ["enhancement"]
+labels: "enhancement"
+---
