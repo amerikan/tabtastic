@@ -41,8 +41,12 @@ async function orderTabsByDomain() {
     });
   }
 
+  const totalPinnedTabs = tabs
+    .filter((tab) => tab.pinned)
+    .reduce((acc) => 1 + acc, 0);
+
   await browser.tabs.move(newTabPositionIds, {
-    index: 0,
+    index: totalPinnedTabs,
   });
 }
 
