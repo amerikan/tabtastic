@@ -18,26 +18,26 @@ async function removeDuplicateTabs() {
 async function orderTabsByDomain() {
   const tabs = await browser.tabs.query({ currentWindow: true });
 
-  const domainGroups = {};
+  const domains = {};
 
   tabs
     .filter((tab) => !tab.pinned)
     .forEach((tab) => {
       const url = new URL(tab.url);
-      const domainKey = url.hostname;
+      const domain = url.hostname;
 
-      if (domainGroups.hasOwnProperty(domainKey)) {
-        domainGroups[domainKey].push(tab);
+      if (domains.hasOwnProperty(domain)) {
+        domains[domain].push(tab);
       } else {
-        domainGroups[domainKey] = [tab];
+        domains[domain] = [tab];
       }
     });
 
   const newTabPositionIds = [];
 
-  for (const urls of Object.values(domainGroups)) {
-    urls.forEach((url) => {
-      newTabPositionIds.push(url.id);
+  for (const urls of Object.values(domains)) {
+    urls.forEach((tab) => {
+      newTabPositionIds.push(tab.id);
     });
   }
 
