@@ -1,4 +1,4 @@
-# Pull Request Proposal
+# Proposal
 
 ## Why
 
@@ -11,3 +11,8 @@
 ## Related
 
 <!-- Any issues or PR's related? -->
+
+<!-- Does it resolve an open issue, if so use the following phrase
+and corresponding issue number -->
+
+<!-- Closes #X -->
