@@ -24,19 +24,23 @@ async function orderTabsByDomain() {
     .filter((tab) => !tab.pinned)
     .forEach((tab) => {
       const url = new URL(tab.url);
-      const domain = url.hostname;
+      const apexDomain = url.hostname.split(".").slice(-2).join(".");
 
-      if (domains.hasOwnProperty(domain)) {
-        domains[domain].push(tab);
+      if (domains.hasOwnProperty(apexDomain)) {
+        domains[apexDomain].push(tab);
       } else {
-        domains[domain] = [tab];
+        domains[apexDomain] = [tab];
       }
     });
 
   const newTabPositionIds = [];
 
-  for (const urls of Object.values(domains)) {
-    urls.forEach((tab) => {
+  for (const domainURLs of Object.values(domains)) {
+    const sortedURLs = domainURLs
+      .slice()
+      .sort((a, b) => a.url.localeCompare(b.url));
+
+    sortedURLs.forEach((tab) => {
       newTabPositionIds.push(tab.id);
     });
   }
