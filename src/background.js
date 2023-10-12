@@ -1,5 +1,5 @@
 async function removeDuplicateTabs() {
-  const tabs = await browser.tabs.query({});
+  const tabs = await browser.tabs.query({ currentWindow: true });
 
   const duplicateIds = [];
   const bins = {};
@@ -16,7 +16,7 @@ async function removeDuplicateTabs() {
 }
 
 async function groupTabsByDomain() {
-  const tabs = await browser.tabs.query({});
+  const tabs = await browser.tabs.query({ currentWindow: true });
 
   const domainGroups = {};
 
