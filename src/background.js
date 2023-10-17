@@ -12,10 +12,13 @@ async function removeDuplicateTabs() {
     }
   });
 
-  await browser.tabs.remove(duplicateTabIds);
+  if (duplicateTabIds.length) {
+    await browser.tabs.remove(duplicateTabIds);
+  }
 }
 
 async function orderTabsByDomain() {
+  const newTabPositionIds = [];
   const domains = {};
 
   const tabs = await browser.tabs.query({ currentWindow: true });
@@ -33,8 +36,6 @@ async function orderTabsByDomain() {
       }
     });
 
-  const newTabPositionIds = [];
-
   for (const domainURLs of Object.values(domains)) {
     const sortedURLs = domainURLs
       .slice()
@@ -45,11 +46,13 @@ async function orderTabsByDomain() {
     });
   }
 
-  const totalPinnedTabs = tabs.filter((tab) => tab.pinned).length;
+  if (newTabPositionIds.length) {
+    const totalPinnedTabs = tabs.filter((tab) => tab.pinned).length;
 
-  await browser.tabs.move(newTabPositionIds, {
-    index: totalPinnedTabs,
-  });
+    await browser.tabs.move(newTabPositionIds, {
+      index: totalPinnedTabs,
+    });
+  }
 }
 
 async function handleToolbarButtonClick() {
