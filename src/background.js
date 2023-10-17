@@ -58,7 +58,7 @@ async function handleToolbarButtonClick() {
 
     await orderTabsByDomain();
   } catch (e) {
-    console.error(`Error: ${error}`);
+    console.error(`Error: ${e}`);
   }
 }
 
