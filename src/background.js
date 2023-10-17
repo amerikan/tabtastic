@@ -18,7 +18,7 @@ async function removeDuplicateTabs() {
 }
 
 async function orderTabsByDomain() {
-  const newTabPositionIds = [];
+  let tabsToMove = [];
   const domains = {};
 
   const tabs = await browser.tabs.query({ currentWindow: true });
@@ -37,21 +37,39 @@ async function orderTabsByDomain() {
     });
 
   for (const domainURLs of Object.values(domains)) {
-    const sortedURLs = domainURLs
+    const sortedTabURLs = domainURLs
       .slice()
       .sort((a, b) => a.url.localeCompare(b.url));
 
-    sortedURLs.forEach((tab) => {
-      newTabPositionIds.push(tab.id);
-    });
+    tabsToMove = [...tabsToMove, ...sortedTabURLs];
   }
 
-  if (newTabPositionIds.length) {
+  if (tabsToMove.length) {
     const totalPinnedTabs = tabs.filter((tab) => tab.pinned).length;
 
-    await browser.tabs.move(newTabPositionIds, {
-      index: totalPinnedTabs,
-    });
+    // Check if tabs.move api method is supported
+    if (typeof browser.tabs.move === "function") {
+      const tabsToMoveIds = tabsToMove.map((tab) => tab.id);
+
+      await browser.tabs.move(tabsToMoveIds, {
+        index: totalPinnedTabs,
+      });
+    } else {
+      // Simulate "move" api using remove/create apis
+      tabsToMove.forEach(async (tab, index) => {
+        const newIndexPosition = totalPinnedTabs + index;
+
+        // Ignore if already in correct position
+        if (tab.index !== newIndexPosition) {
+          await browser.tabs.remove(tab.id);
+
+          await browser.tabs.create({
+            url: tab.url,
+            index: newIndexPosition,
+          });
+        }
+      });
+    }
   }
 }
 
